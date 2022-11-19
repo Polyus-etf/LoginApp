@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,19 +24,33 @@ class LoginViewController: UIViewController {
         welcomeVC.user = user
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     @IBAction func forgotNameButton() {
-        showAlert(with: "Oops!", and: "Your name is \(user) 😉")
+        showAlert(
+            with: "Oops!",
+            and: "Your name is \(user) 😉"
+        )
     }
     
     @IBAction func forgotPasswordButton() {
-        showAlert(with: "Oops!", and: "Your password is \(password) 😉")
+        showAlert(
+            with: "Oops!",
+            and: "Your password is \(password) 😉"
+        )
     }
         
     @IBAction func loginButton() {
         let user = userTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         if user != self.user || password != self.password {
-            showAlert(with: "Invalid login or password", and: "Please enter correct login and password", do: true)
+            showAlert(
+                with: "Invalid login or password",
+                and: "Please enter correct login and password",
+                do: true)
         }
     }
     
@@ -45,9 +58,6 @@ class LoginViewController: UIViewController {
         userTextField.text = ""
         passwordTextField.text = ""
     }
-
-    
-    
 }
 
 extension LoginViewController {
