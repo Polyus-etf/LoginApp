@@ -9,21 +9,29 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    var user: String!
+    @IBOutlet var welcomeLabel: UILabel!
     
-    @IBOutlet var welcomeUILabel: UILabel!
+    var user = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gradient()
-        welcomeUILabel.text = "Welcome, \(user ?? "")!"
+        welcomeLabel.text = "Welcome, \(user)!"
     }
-}
-
-extension WelcomeViewController {
+    
     private func gradient() {
-        let color1 = CGColor(red: 193 / 255, green: 114 / 255, blue: 128 / 255, alpha: 1.0)
-        let color2 = CGColor(red: 118 / 255, green: 152 / 255, blue: 222 / 255, alpha: 1.0)
+        let color1 = CGColor(
+            red: 193 / 255,
+            green: 114 / 255,
+            blue: 128 / 255,
+            alpha: 1.0
+        )
+        let color2 = CGColor(
+            red: 118 / 255,
+            green: 152 / 255,
+            blue: 222 / 255,
+            alpha: 1.0
+        )
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [color1, color2]

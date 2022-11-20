@@ -61,7 +61,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FZE-dO-PYg"/>
                     <connections>
-                        <outlet property="welcomeUILabel" destination="jDG-4G-spU" id="PmA-BJ-skT"/>
+                        <outlet property="welcomeLabel" destination="jDG-4G-spU" id="PmA-BJ-skT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mp8-iG-tox" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="HS5-U2-hyQ">
-                                <rect key="frame" x="40" y="197.00000000000003" width="310" height="261.66666666666674"/>
+                                <rect key="frame" x="40" y="265.66666666666663" width="310" height="261.66666666666663"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhT-5C-5ax">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="34"/>
@@ -97,11 +97,10 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9q-E2-lmx"/>
-                                            <segue destination="RWN-bB-5Zn" kind="presentation" modalPresentationStyle="fullScreen" id="Bur-B5-jK0"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bWT-NX-zfa">
-                                        <rect key="frame" x="0.0" y="230.66666666666669" width="310" height="31"/>
+                                        <rect key="frame" x="0.0" y="230.66666666666663" width="310" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNT-pa-e85">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="31"/>
@@ -109,16 +108,16 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="MW8-gC-hqz"/>
+                                                    <action selector="forgotRegisteredData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SO6-5d-vB2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-LG-seh">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-LG-seh">
                                                 <rect key="frame" x="160" y="0.0" width="150" height="31"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="YNi-US-pAG"/>
+                                                    <action selector="forgotRegisteredData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GWr-ai-f4c"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -127,17 +126,18 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HS5-U2-hyQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="6Vh-YH-H3e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HS5-U2-hyQ" secondAttribute="trailing" constant="40" id="P83-16-jr4"/>
                             <constraint firstItem="HS5-U2-hyQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="e6a-b3-8FG"/>
+                            <constraint firstItem="HS5-U2-hyQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-32" id="zgI-nG-5wE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jZq-xf-o1d"/>
                     <connections>
                         <outlet property="passwordTextField" destination="pBp-ay-BD7" id="9Yk-y7-Cgh"/>
                         <outlet property="userTextField" destination="UhT-5C-5ax" id="Lx5-Fa-Nqh"/>
+                        <segue destination="RWN-bB-5Zn" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="cGm-Il-SuP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -146,6 +146,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

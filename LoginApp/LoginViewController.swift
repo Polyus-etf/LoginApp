@@ -9,15 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let user = "User"
-    let password = "q1234"
-
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let user = "User"
+    private let password = "q1234"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
@@ -29,29 +25,22 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func forgotNameButton() {
-        showAlert(
-            with: "Oops!",
-            and: "Your name is \(user) 😉"
-        )
+    @IBAction func forgotRegisteredData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Oops!", message: "Your name is \(user) 😉")
+        : showAlert(title: "Oops!", message: "Your password is \(password) 😉")
     }
-    
-    @IBAction func forgotPasswordButton() {
-        showAlert(
-            with: "Oops!",
-            and: "Your password is \(password) 😉"
-        )
-    }
+
         
     @IBAction func loginButton() {
-        let user = userTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        if user != self.user || password != self.password {
+        guard userTextField.text == user, passwordTextField.text == password else {
             showAlert(
-                with: "Invalid login or password",
-                and: "Please enter correct login and password",
-                do: true)
+                title: "Invalid login or password",
+                message: "Please enter correct login and password",
+                textField: passwordTextField)
+            return
         }
+        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
     }
     
     @IBAction func unwind(for seque: UIStoryboardSegue) {
@@ -61,12 +50,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    private func showAlert(with title: String, and message: String, do erase: Bool = false) {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            if erase {
-                self.passwordTextField.text = ""
-            }
+            textField?.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
