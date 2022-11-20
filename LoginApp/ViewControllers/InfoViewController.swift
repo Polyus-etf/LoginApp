@@ -9,13 +9,18 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
-    var user: User?
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var surnameLabel: UILabel!
+    @IBOutlet var hobbyLabel: UILabel!
+    @IBOutlet var workLabel: UILabel!
+    
+    var person: Person?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad()        
+        nameLabel.text = person?.name
+        surnameLabel.text = person?.surname
+        hobbyLabel.text = person?.hobby
+        workLabel.text = person?.work
     }
-    
-
-
 }

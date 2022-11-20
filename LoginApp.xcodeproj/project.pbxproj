@@ -16,6 +16,7 @@
 		8C0CD8E129295E17001FDEA2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD8E029295E17001FDEA2 /* WelcomeViewController.swift */; };
 		8C134FB1292AA9AD001D66A6 /* PesionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C134FB0292AA9AD001D66A6 /* PesionalData.swift */; };
 		8C134FB3292AD440001D66A6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C134FB2292AD440001D66A6 /* InfoViewController.swift */; };
+		8C9A1D2F292ADBD30036BD27 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A1D2E292ADBD30036BD27 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8C0CD8E029295E17001FDEA2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8C134FB0292AA9AD001D66A6 /* PesionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesionalData.swift; sourceTree = "<group>"; };
 		8C134FB2292AD440001D66A6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		8C9A1D2E292ADBD30036BD27 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				8C0CD8D029294942001FDEA2 /* LoginViewController.swift */,
 				8C0CD8E029295E17001FDEA2 /* WelcomeViewController.swift */,
 				8C134FB2292AD440001D66A6 /* InfoViewController.swift */,
+				8C9A1D2E292ADBD30036BD27 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				8C0CD8E129295E17001FDEA2 /* WelcomeViewController.swift in Sources */,
 				8C0CD8CD29294942001FDEA2 /* AppDelegate.swift in Sources */,
 				8C134FB1292AA9AD001D66A6 /* PesionalData.swift in Sources */,
+				8C9A1D2F292ADBD30036BD27 /* TabBarController.swift in Sources */,
 				8C134FB3292AD440001D66A6 /* InfoViewController.swift in Sources */,
 				8C0CD8CF29294942001FDEA2 /* SceneDelegate.swift in Sources */,
 			);

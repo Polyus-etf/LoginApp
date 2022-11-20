@@ -17,13 +17,14 @@ class LoginViewController: UIViewController {
     private let users = User.getUsers()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tapBarVC = segue.destination as? UITabBarController else { return }
+        guard let tapBarVC = segue.destination as? TabBarController else { return }
+        tapBarVC.person = user?.person
         guard let viewControllers = tapBarVC.viewControllers else { return }
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.user = user
+                welcomeVC.person = user?.person
             } else if let infoVC = viewController as? InfoViewController {
-                infoVC.user = user
+                infoVC.person = user?.person
             }
         }
     }

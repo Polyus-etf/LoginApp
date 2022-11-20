@@ -147,6 +147,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="person.fill" catalog="system" id="Hkm-A9-AeM"/>
+                    <connections>
+                        <outlet property="hobbyLabel" destination="Vxe-Zz-JV7" id="3q9-dl-lfF"/>
+                        <outlet property="nameLabel" destination="VAr-7s-0El" id="sMk-ch-zzC"/>
+                        <outlet property="surnameLabel" destination="ZsN-Ce-9EZ" id="5Wx-am-ZDe"/>
+                        <outlet property="workLabel" destination="p7g-os-oKz" id="ha5-Bb-mMW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzd-xN-CsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,9 +236,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="wmr-0E-UYp">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dWi-Qj-WXA" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dWi-Qj-WXA" customClass="TabBarController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hrI-Wd-M19">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
